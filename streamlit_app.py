@@ -2,10 +2,10 @@ import streamlit as sl
 
 sl.title('My Parents New Healthy Diner')
 
-streamlit.subheader('Breakfast Menu')
+sl.subheader('Breakfast Menu')
 
-streamlit.text('Omega 3 & Blueberry Oatmeal')
+sl.text('Omega 3 & Blueberry Oatmeal')
 
-streamlit.text('Kale, Spinach & Rocket Smoothie')
+sl.text('Kale, Spinach & Rocket Smoothie')
 
-streamlit.text('Hard-Boiled Free-Range Egg')
+sl.text('Hard-Boiled Free-Range Egg')
