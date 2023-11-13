@@ -4,7 +4,7 @@ sl.title('My Parents New Healthy Diner')
 
     
 
-sl.subheader('Breakfast Menu')
+sl.header('Breakfast Menu')
 sl.text('🥣 Omega 3 & Blueberry Oatmeal')
 sl.text('🥗 Kale, Spinach & Rocket Smoothie')
 sl.text('🐔 Hard-Boiled Free-Range Egg')
