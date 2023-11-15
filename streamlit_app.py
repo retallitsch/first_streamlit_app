@@ -25,7 +25,5 @@ sl.header("Fruityvice Fruit Advice!")
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
-print (fruityvice_response.json())
-
 sl.text(fruityvice_response.json())
 
