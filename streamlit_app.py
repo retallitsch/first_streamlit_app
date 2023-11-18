@@ -41,7 +41,6 @@ try:
 except URLError as e:
     streamlit.error()
 
-streamlit.stop()
 streamlit.header("The fruit load list contains:")
 # Snowflake function
 def get_fruit_load_list():
@@ -59,4 +58,5 @@ streamlit.header("The fruit load list contains:")
 add_my_fruit = streamlit.text_input('What fruit would you like add?','Jackfruit')
 streamlit.write('Thanks for adding ', add_my_fruit)
 
+streamlit.stop()
 my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('from streamlit')")
