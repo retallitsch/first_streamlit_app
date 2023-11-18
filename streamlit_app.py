@@ -1,6 +1,7 @@
 import streamlit
 import pandas as pd
 import snowflake.connector
+import requests
 
 # Display the table on the page.
 my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
@@ -26,7 +27,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
-import requests
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
 # write your own comment -what does the next line do?
@@ -35,12 +36,12 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 streamlit.dataframe(fruityvice_normalized)
 
-add_my_fruit = streamlit.text_input('What fruit would you like add?','Jackfruit')
-streamlit.write('Thanks for adding ', add_my_fruit)
-
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
+
+add_my_fruit = streamlit.text_input('What fruit would you like add?','Jackfruit')
+streamlit.write('Thanks for adding ', add_my_fruit)
 
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
